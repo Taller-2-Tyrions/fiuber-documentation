@@ -1,0 +1,23 @@
+@startuml
+
+
+
+actor Admin
+
+Admin -> Gateway: POST Block User
+activate Gateway
+Gateway -> Users: POST Authenticate token
+activate Users
+Users -> Gateway: HTTP 200 OK, roles = ["Admin"]
+deactivate Users
+Gateway -> Gateway: has permission?
+Gateway -> Users: POST Block User
+activate Users
+Users -> MongoDB: Modify User
+Users --> Gateway: HTTP 200 OK
+deactivate Users
+Gateway --> Admin: HTTP 200 OK
+deactivate Gateway
+
+
+@enduml
