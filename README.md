@@ -14,6 +14,10 @@ Es el encargado de manejar la lógica de usuarios y delega la autenticación (y 
 El almacenamiento consistente de los datos personales de los usuarios y sus permisos los mantenemos en una base de datos de Mongo, desplegada con Mongo Atlas. Las fotos de perfil, las almacenamos en Firebase, utilizando el servicio Firebase Storage.
 
 Decidimos crear tres tipos de roles no excluyentes entre sí: pasajero, conductor y administrador. En concordancia con los mismos, implementamos distintos esquemas para organizar la estructura de la base de datos.
+
+![image](https://user-images.githubusercontent.com/65830097/207718460-c220df40-5797-420a-bf8d-80094ce51845.png)
+
+
 ## Microservicio Voyage
 Chamuyo
 ![secuencia_sn](https://user-images.githubusercontent.com/71950097/207716377-5d29a7de-1f28-4dbb-b590-3abfeca0e41a.png)
