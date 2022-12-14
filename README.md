@@ -25,3 +25,11 @@ Chamuyo + diagrama
 
 ## Microservicio Metrics
 Chamuyo + diagrama
+
+## Organización de los repositorios y esquema de trabajo
+
+Cada microservicio desplegado fue implementado en un repositorio de github dentro de una organización. Principalmente usamos Python junto con FastAPI para el desarrollo de los microservicios. El servicio Payments decidimos implementarlo en Javascript con Express.
+
+A excepción del Gateway, todos los microservicios están testeados con un coverage de al menos 70%. Esta medida se puede observar en el README.md de cada repositorio. Utilizamos Codecov como servicio externo que mide la covertura de código.
+
+Por otro lado, todos los servicios están desplegados en la nube en la plataforma heroku. El deploy se hizo con integración continua mediante workflows de github actions. Cada aplicación tiene su respectivo Dockerfile, el cual nos permite abstraernos de la arquitectura y del sistema operativo, para asegurar el funcionamiento de los mismos.
