@@ -67,3 +67,37 @@ Cada microservicio desplegado fue implementado en un repositorio de github dentr
 A excepción del Gateway, todos los microservicios están testeados con un coverage de al menos 70%. Esta medida se puede observar en el README.md de cada repositorio. Utilizamos Codecov como servicio externo que mide la covertura de código.
 
 Por otro lado, todos los servicios están desplegados en la nube en la plataforma heroku. El deploy se hizo con integración continua mediante workflows de github actions. Cada aplicación tiene su respectivo Dockerfile, el cual nos permite abstraernos de la arquitectura y del sistema operativo, para asegurar el funcionamiento de los mismos.
+
+
+
+## Instalación y Configuración
+
+Cada aplicación de Fiuber tiene sus particularidades a la hora de la configuración, instalación y despliegue a la nube. Como variable en común para todos las aplicaciones, es necesario añadir un archivo con nombre `.env` en la raíz del proyecto. En cada repositorio se encuentra un archivo llamado `.env_example` el cual muestra la estructura y el significado de cada uno de los datos que se deben setear como variables de entorno.
+
+### Servicios Backend
+
+Si se quisiera hacer un fork del repositorio y desplegar un microservicio en la nube, se deben setear todas las variables de github actions correspondientes al repositorio, para que luego pueda hacerse el deploy correctamente. 
+
+Sumado al archivo `.env` mencionado, tanto el microservicio de usuarios como el de voyage necesitan de un archivo `firebasekey.json` en la raiz del proyecto. El mismo se obtiene en la configuración de un proyecto Firebase.
+
+Para correr cualquiera de los proyectos que utilizan Python como lenguaje de programación, se deben ejecutar las siguientes lineas. 
+
+```shell
+pip install -r requirements.txt
+uvicorn app.main:app --host=0.0.0.0 --port=8077
+``` 
+
+O mismo, utilizando el archivo dev.Dockerfile dado con:
+
+```shell
+docker build -f dev.Dockerfile  -t dev_users .
+docker run dev_users
+```
+
+### Backoffice Administradores
+Para levantar el frontend localmente, se debe instalar las dependencias y luego levantar la aplicación. Esto se consigue ejecutando:
+
+```shell
+npm install
+npm run dev
+```
