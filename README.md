@@ -55,6 +55,9 @@ Para enviar datos desde el gateway al microservicio se utiliza una cola de Rabbi
 
 Por otro lado, para obtener las metricas, se exponen 3 endpoints los cuales si son consultados mediante el gateway haciendo uso de la API. Dichos endpoints se encuentran documentados [aca](https://fiuber-metrics-new.herokuapp.com/docs "Documentación Metricas OpenAPI").
 
+![image](https://user-images.githubusercontent.com/74473002/207730760-3b58ea62-479a-4621-b486-31608956ab3b.png)
+
+
 
 ## Organización de los repositorios y esquema de trabajo
 
