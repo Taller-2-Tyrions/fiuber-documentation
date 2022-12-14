@@ -1,0 +1,33 @@
+@startuml
+
+autonumber
+
+actor Admin
+actor Passenger
+
+activate Gateway
+Passenger -> Gateway: login
+activate Passenger
+Gateway -> RabbitMQService: Push Metric (login)
+activate RabbitMQService
+Gateway --> Passenger: Ok
+deactivate Gateway
+deactivate Passenger
+
+
+activate Metrics
+Metrics -> RabbitMQService: Pull Metric
+RabbitMQService --> Metrics: metric
+
+
+activate Gateway
+Admin -> Gateway: users metrics
+Gateway -> Metrics: Get users metrics
+
+Metrics --> Gateway: users metrics
+Gateway --> Admin: users metrics
+deactivate Gateway
+
+
+deactivate Metrics
+deactivate RabbitMQService
