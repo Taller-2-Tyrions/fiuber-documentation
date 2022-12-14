@@ -42,14 +42,16 @@ Por un lado, permite la modificación de los mismos a través de un endpoint acc
 
 
 ## Microservicio Voyage
-Chamuyo
+
 ![secuencia_sn](https://user-images.githubusercontent.com/71950097/207716377-5d29a7de-1f28-4dbb-b590-3abfeca0e41a.png)
 
 ## Microservicio Payments
 Chamuyo + diagrama
 
 ## Microservicio Metrics
-Chamuyo + diagrama
+El microservicio de metricas se utiliza para obtener diferentes datos provenientes del gateway con el fin de procesarlos para poder crear metricas sobre usuarios, pagos y viajes.
+Para enviar datos desde el gateway al microservicio se utiliza una cola de RabbitMQ, esto se debe a que la cantidad de eventos en el gateway puede ser muy alta y si enviamos todos ellos mediante llamadas a la API de metricas podria llegar a saturarse el microservicio, lo que logramos con una queue es que el gateway encole tantos mensajes como sea necesario en la misma y luego el microservicio ira desencolando y procesando dichos mensajes cuando sea capaz de hacerlo.
+Por otro lado, para obtener las metricas, se exponen 3 endpoints los cuales si son consultados mediante el gateway haciendo uso de la API.
 
 ## Organización de los repositorios y esquema de trabajo
 
