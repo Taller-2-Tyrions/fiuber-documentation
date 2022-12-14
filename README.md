@@ -18,7 +18,9 @@ Decidimos crear tres tipos de roles no excluyentes entre sí: pasajero, conducto
 A modo de ejemplo, presentamos los siguientes diagramas de secuencia. Ambos muestran casos de un pedido de bloqueo por parte de un usuario a otro usuario del sistema. El primero, con rol de Pasajero, no tiene permisos para realizar el bloqueo. Por lo tanto, recibe un código de retorno 401, indicandole que no está autorizado para realizar la acción. Por su parte el segundo, al tratarse de un administrador, efectúa el bloqueo del usuario.
 
 ![image](https://user-images.githubusercontent.com/65830097/207720756-befae9e0-8d45-4d14-852e-fa60aa3d7316.png)
+*Diagrama de Secuencia: Pasajero no está autorizado para bloquear a un usuario*
 ![image](https://user-images.githubusercontent.com/65830097/207719047-a2963331-2415-4157-a10b-0546adeb4dab.png)
+*Diagrama de Secuencia: Administrador tiene permisos para bloquear a un usuario*
 
 Vale la pena remarcar que en el primer diagrama se hace una consulta al servicio externo de Firebase para validar el token, y otra consulta a la base de datos de Mongo para conocer los roles del usuario. Al necesitar de ambos datos en cada validación de una consulta, nos pareció necesario que este microservicio conozca tanto de usuarios y sus roles, como también sea responsable de la autenticación.  
 
