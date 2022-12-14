@@ -8,6 +8,9 @@ El servicio gateway verifica los parámetros y además se encarga de verificar q
 
 Decidimos desplegar los siguientes microservicios: Users, Voyage, Pricing, Payments y Metrics. Además, nos nutrimos de distintos servicios externos como lo son Mongo Atlas, Firebase, Google Maps, Rabit Queues. A continuación explicaremos cada uno de los microservicios implementados y justificaremos porqué cada uno de estos es necesario para asegurar la menor contención entre los mismos.
 
+![Arch Taller2-Página-2](https://user-images.githubusercontent.com/74473002/207724586-339f74e0-0987-4590-a79c-c0eec67a22e6.jpg)
+
+
 ## MicroServicio Users
 Es el encargado de manejar la lógica de usuarios y delega la autenticación (y recuperación de contraseña) en Firebase. Los endpoints que publica se pueden observar haciendo click [aca](https://fiuber-users-new.herokuapp.com/docs "Documentación Usuarios OpenAPI").
 
