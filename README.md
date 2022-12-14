@@ -15,7 +15,7 @@ El almacenamiento consistente de los datos personales de los usuarios y sus perm
 
 Decidimos crear tres tipos de roles no excluyentes entre sí: pasajero, conductor y administrador. En concordancia con los mismos, implementamos distintos esquemas para organizar la estructura de la base de datos.
 
-![image](https://user-images.githubusercontent.com/65830097/207718460-c220df40-5797-420a-bf8d-80094ce51845.png)
+![image](https://user-images.githubusercontent.com/65830097/207719184-c727ed6c-5dae-45d3-8bea-e70c9f65befb.png)
 ![image](https://user-images.githubusercontent.com/65830097/207719047-a2963331-2415-4157-a10b-0546adeb4dab.png)
 
 
