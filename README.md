@@ -19,10 +19,12 @@ A modo de ejemplo, presentamos los siguientes diagramas de secuencia. Ambos mues
 
 
 ![image](https://user-images.githubusercontent.com/65830097/207720756-befae9e0-8d45-4d14-852e-fa60aa3d7316.png)
+
 *Diagrama de Secuencia: Pasajero no está autorizado para bloquear a un usuario*
 
 
 ![image](https://user-images.githubusercontent.com/65830097/207719047-a2963331-2415-4157-a10b-0546adeb4dab.png)
+
 *Diagrama de Secuencia: Administrador tiene permisos para bloquear a un usuario*
 
 
