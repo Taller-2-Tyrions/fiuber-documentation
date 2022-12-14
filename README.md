@@ -15,7 +15,8 @@ El almacenamiento consistente de los datos personales de los usuarios y sus perm
 
 Decidimos crear tres tipos de roles no excluyentes entre sí: pasajero, conductor y administrador. En concordancia con los mismos, implementamos distintos esquemas para organizar la estructura de la base de datos.
 ## Microservicio Voyage
-Chamuyo + diagrama
+Chamuyo
+![secuencia_sn](https://user-images.githubusercontent.com/71950097/207716377-5d29a7de-1f28-4dbb-b590-3abfeca0e41a.png)
 
 ## Microservicio Pricing
 Chamuyo + diagrama
