@@ -41,6 +41,9 @@ Vale la pena remarcar que en el primer diagrama se hace una consulta al servicio
 ## Microservicio Pricing
 Este microservicio lo utilizamos principalmente para manejar los atributos de configuración de cotizaciones que permiten calcular el precio de cada viaje. Estas constantes son almacenadas en una base de datos de Mongo. Los endpoints que publica se pueden ver [aca](https://fiuber-pricing-new.herokuapp.com/docs "Documentación Cotización OpenAPI"). 
 
+![image](https://user-images.githubusercontent.com/65830097/207961593-d31f22b1-c364-42b7-be78-493504abcd45.png)
+
+
 
 Por un lado, permite la modificación de los mismos a través de un endpoint accesible únicamente para los administradores. Además, es el servicio que se encarga de calcular los precios de los viajes. Dado que los mismos dependen del tiempo y la distancia que recorre el conductor, se realizan consultas al servicio externo que nos ofrece Google Maps.  
 
