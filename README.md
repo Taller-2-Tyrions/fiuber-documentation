@@ -4,7 +4,7 @@
 
 A continuación mostramos un esquema básico de la arquitectura de nuestro backend. El mismo sigue el patrón de arquitectura API Gateway. Todas las consultas realizadas tanto por el front mobile, como por el backoffice de administradores, son a endpoints publicados en el gateway. 
 
-![Arch Taller2-Página-2](https://user-images.githubusercontent.com/74473002/207724586-339f74e0-0987-4590-a79c-c0eec67a22e6.jpg)
+![arquitectura](https://user-images.githubusercontent.com/71950097/207928001-083df2cc-b502-4f67-a70f-75ca315ca264.png)
 
 *Diagrama de Arquitectura de Fiuber*
 
