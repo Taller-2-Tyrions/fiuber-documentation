@@ -57,7 +57,15 @@ Este también se encarga de reportar denuncias/reviews de viajes.
 En el diagrama se puede observar un flujo de consulta de viaje correcto. Vemos que primero se buscan los mas cercanos luego se elije un viaje y al finalizar desde el gateway se llama a payments. En cualquier punto de este proceso antes del fin del viaje, cualquiera de ambas partes podría cancelar el viaje y de ser necesario sera cobrada una multa.
 
 ## Microservicio Payments
-Chamuyo + diagrama
+El microservicio de pagos(Payments) esta implementado con una blockchain de prueba Etherium. La implementacion se hizo usando Alchemy(https://www.alchemy.com/). Adicionalmente se usa una base de datos Mongo(collection 'Payments') donde se van guardando los estados de las Wallets.
+Cada usuario al registrarse en la plataforma se le crea una billetera la cual va a contener sus fondos en Ethers.
+Payments guarda:
+  * Los montos de cada Wallet por usuario
+  * Los depositos realizados por cada Wallet
+  * Los Wallets que asocian users y address(Wallet address)
+  * Las extracciones y sus montos
+
+Los endpoint de la api pueden consultarse [aca](https://github.com/Taller-2-Tyrions/fiuber-payments#readme "Documentación Payments OpenAPI").
 
 ## Microservicio Metrics
 El microservicio de metricas se utiliza para obtener diferentes datos provenientes del gateway con el fin de procesarlos para poder crear metricas sobre usuarios, pagos y viajes.
