@@ -60,7 +60,7 @@ En el diagrama se puede observar un flujo de consulta de viaje correcto. Vemos q
 En el diagrama nos abstraemos de las push notifications, pero es importante remarcar que, ante una acción de un pasajero / chofer que afecte a otro usuario, y éste debe ser notificado por esta acción, se envía una notificación Push a través de Firebase Cloud Messaging. El token específico de cada dispositivo es otorgado implícitamente por el usuario en la etapa de login.
 
 ## Microservicio Payments
-El microservicio de pagos(Payments) esta implementado con una blockchain de prueba Etherium. La implementacion se hizo usando Alchemy(https://www.alchemy.com/). Adicionalmente se usa una base de datos Mongo(collection 'Payments') donde se van guardando los estados de las Wallets.
+El microservicio de pagos(Payments) esta implementado con una blockchain de prueba Ethereum. La implementacion se hizo usando Alchemy(https://www.alchemy.com/). Adicionalmente se usa una base de datos Mongo(collection 'Payments') donde se van guardando los estados de las Wallets.
 Cada usuario al registrarse en la plataforma se le crea una billetera la cual va a contener sus fondos en Ethers.
 Payments guarda:
   * Los montos de cada Wallet por usuario
@@ -87,7 +87,7 @@ Por otro lado, para obtener las metricas, se exponen 3 endpoints los cuales si s
 
 ## Organización de los repositorios y esquema de trabajo
 
-Cada microservicio desplegado fue implementado en un repositorio de github dentro de una organización. Principalmente usamos Python junto con FastAPI para el desarrollo de los microservicios. El servicio Payments decidimos implementarlo en Javascript con Express.
+Cada microservicio desplegado fue implementado en un repositorio de github dentro de una organización. Principalmente usamos Python junto con FastAPI para el desarrollo de los microservicios. El servicio Payments decidimos implementarlo en Javascript con Fastify.
 
 A excepción del Gateway, todos los microservicios están testeados con un coverage de al menos 70%. Esta medida se puede observar en el README.md de cada repositorio. Utilizamos Codecov como servicio externo que mide la covertura de código.
 
@@ -118,6 +118,14 @@ O mismo, utilizando el archivo dev.Dockerfile dado con:
 docker build -f dev.Dockerfile  -t dev_users .
 docker run dev_users
 ```
+
+Para los microservicios que corren con NodeJS se debe ejecutar:
+
+```shell
+npm install
+npm start
+```
+
 
 ### Backoffice Administradores
 Para levantar el frontend localmente, se debe instalar las dependencias y luego levantar la aplicación. Esto se consigue ejecutando:
