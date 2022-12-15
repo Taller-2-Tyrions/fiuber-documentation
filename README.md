@@ -41,10 +41,6 @@ Vale la pena remarcar que en el primer diagrama se hace una consulta al servicio
 ## Microservicio Pricing
 Este microservicio lo utilizamos principalmente para manejar los atributos de configuración de cotizaciones que permiten calcular el precio de cada viaje. Estas constantes son almacenadas en una base de datos de Mongo. Los endpoints que publica se pueden ver [aca](https://fiuber-pricing-new.herokuapp.com/docs "Documentación Cotización OpenAPI"). 
 
-![image](https://user-images.githubusercontent.com/65830097/207961593-d31f22b1-c364-42b7-be78-493504abcd45.png)
-
-
-
 Por un lado, permite la modificación de los mismos a través de un endpoint accesible únicamente para los administradores. Además, es el servicio que se encarga de calcular los precios de los viajes. Dado que los mismos dependen del tiempo y la distancia que recorre el conductor, se realizan consultas al servicio externo que nos ofrece Google Maps.  
 
 Tal como se muestra en el diagrama de arquitectura, esta aplicación le provee servicios a Voyage, para calcular el precio de los viajes, y también al Gateway, para permitir las modificación de los parámetros.
@@ -73,6 +69,9 @@ Payments guarda:
   * Las extracciones y sus montos
 
 Los endpoint de la api pueden consultarse [aca](https://github.com/Taller-2-Tyrions/fiuber-payments#readme "Documentación Payments OpenAPI").
+
+![image](https://user-images.githubusercontent.com/65830097/207961593-d31f22b1-c364-42b7-be78-493504abcd45.png)
+
 
 ## Microservicio Metrics
 El microservicio de metricas se utiliza para obtener diferentes datos provenientes del gateway con el fin de procesarlos para poder crear metricas sobre usuarios, pagos y viajes.
