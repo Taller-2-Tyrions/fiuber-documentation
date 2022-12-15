@@ -42,7 +42,9 @@ Vale la pena remarcar que en el primer diagrama se hace una consulta al servicio
 Este microservicio lo utilizamos principalmente para manejar los atributos de configuración de cotizaciones que permiten calcular el precio de cada viaje. Estas constantes son almacenadas en una base de datos de Mongo. Los endpoints que publica se pueden ver [aca](https://fiuber-pricing-new.herokuapp.com/docs "Documentación Cotización OpenAPI"). 
 
 
-Por un lado, permite la modificación de los mismos a través de un endpoint accesible únicamente por los administradores. Además, es el servicio que se encarga de calcular los precios de los viajes. Dado que los mismos dependen del tiempo y la distancia que recorre el conductor, se realizan consultas al servicio externo que nos ofrece Google Maps.  
+Por un lado, permite la modificación de los mismos a través de un endpoint accesible únicamente para los administradores. Además, es el servicio que se encarga de calcular los precios de los viajes. Dado que los mismos dependen del tiempo y la distancia que recorre el conductor, se realizan consultas al servicio externo que nos ofrece Google Maps.  
+
+Tal como se muestra en el diagrama de arquitectura, esta aplicación le provee servicios a Voyage, para calcular el precio de los viajes, y también al Gateway, para permitir las modificación de los parámetros.
 
 
 ## Microservicio Voyage
@@ -54,7 +56,9 @@ Este también se encarga de reportar denuncias/reviews de viajes.
 
 ![secuencia_sn](https://user-images.githubusercontent.com/71950097/207716377-5d29a7de-1f28-4dbb-b590-3abfeca0e41a.png)
 
-En el diagrama se puede observar un flujo de consulta de viaje correcto. Vemos que primero se buscan los mas cercanos luego se elije un viaje y al finalizar desde el gateway se llama a payments. En cualquier punto de este proceso antes del fin del viaje, cualquiera de ambas partes podría cancelar el viaje y de ser necesario sera cobrada una multa.
+En el diagrama se puede observar un flujo de consulta de viaje correcto. Vemos que primero se buscan los mas cercanos, luego se elije un viaje y al finalizar desde el gateway se llama a payments. En cualquier punto de este proceso antes del fin del viaje, cualquiera de ambas partes podría cancelar el viaje y de ser necesario sera cobrada una multa.
+
+En el diagrama nos abstraemos de las push notifications, pero es importante remarcar que, ante una acción de un pasajero / chofer que afecte a otro usuario, y éste debe ser notificado por esta acción, se envía una notificación Push a través de Firebase Cloud Messaging. El token específico de cada dispositivo es otorgado implícitamente por el usuario en la etapa de login.
 
 ## Microservicio Payments
 El microservicio de pagos(Payments) esta implementado con una blockchain de prueba Etherium. La implementacion se hizo usando Alchemy(https://www.alchemy.com/). Adicionalmente se usa una base de datos Mongo(collection 'Payments') donde se van guardando los estados de las Wallets.
