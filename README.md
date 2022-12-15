@@ -52,7 +52,7 @@ Este microservicio es utilizado para la creacion de viajes y la interacción ent
 
 El microservicio se encarga de almacenar la ubicación de los choferes para poder hallar aquellos mas cercanos a la consulta pedida por un pasajero y luego darle los mas cercanos para mejorar el flujo de pasajeros-choferes. El mismo se comunica con el microservicio de pricing para poder consultar el precio de los posibles viajes a realizar o de un viaje cancelado.
 
-Este también se encarga de reportar denuncias/reviews de viajes.
+Este también se encarga de reportar denuncias/reviews de viajes, como también de registrar usuarios al servicio vip.
 
 ![secuencia_sn](https://user-images.githubusercontent.com/71950097/207716377-5d29a7de-1f28-4dbb-b590-3abfeca0e41a.png)
 
