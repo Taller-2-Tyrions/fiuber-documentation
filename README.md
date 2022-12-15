@@ -46,8 +46,15 @@ Por un lado, permite la modificación de los mismos a través de un endpoint acc
 
 
 ## Microservicio Voyage
+Este microservicio es utilizado para la creacion de viajes y la interacción entre choferes y pasajeros. Los endpoints que publica se pueden ver [aca](https://fiuber-voyage-new.herokuapp.com/docs "Documentación Voyage OpenAPI"). 
+
+El microservicio se encarga de almacenar la ubicación de los choferes para poder hallar aquellos mas cercanos a la consulta pedida por un pasajero y luego darle los mas cercanos para mejorar el flujo de pasajeros-choferes. El mismo se comunica con el microservicio de pricing para poder consultar el precio de los posibles viajes a realizar o de un viaje cancelado.
+
+Este también se encarga de reportar denuncias/reviews de viajes.
 
 ![secuencia_sn](https://user-images.githubusercontent.com/71950097/207716377-5d29a7de-1f28-4dbb-b590-3abfeca0e41a.png)
+
+En el diagrama se puede observar un flujo de consulta de viaje correcto. Vemos que primero se buscan los mas cercanos luego se elije un viaje y al finalizar desde el gateway se llama a payments. En cualquier punto de este proceso antes del fin del viaje, cualquiera de ambas partes podría cancelar el viaje y de ser necesario sera cobrada una multa.
 
 ## Microservicio Payments
 Chamuyo + diagrama
