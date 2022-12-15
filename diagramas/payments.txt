@@ -1,0 +1,23 @@
+@startuml
+
+activate Gateway
+Gateway -> Payments: Deposit (amount, id)
+activate Payments
+Payments -> MongoDB: Find Wallet(User-ID)
+activate MongoDB
+MongoDB --> Payments: Wallet
+deactivate MongoDB
+Payments -> Alchemy: Get contract
+activate Alchemy
+Alchemy --> Payments: Contract
+deactivate Alchemy
+Payments -> Contract: Deposit (amount)
+activate Contract
+Contract --> Payments: OK Deposit
+deactivate Contract
+Payments -> MongoDB: Save Transaction Info
+deactivate Payments
+deactivate Gateway
+
+
+@enduml
